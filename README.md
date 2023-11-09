@@ -1,5 +1,9 @@
 # data512_common_analysis
 
+## NOTE
+
+**The reflection can be found in 'Part 1 -- Common Analysis Reflection.pdf'. There was no way to submit two links so I submitted the github repo.**
+
 ## Summary
 
 This repository is the code, data, and analysis for the analysis of wildfire data. This project is interested in the years of 1963 to present day and fires up to 1250 miles from the city of Pullman. From the acres burned and distance from pullman, this project seeks to estimate the smoke impact on the city of Pullman.
