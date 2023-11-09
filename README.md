@@ -14,6 +14,8 @@ To access this API, it is necessary to create an account and generate API key. T
 
 The code for gathering the fire data for analysis and smoke impact estimates can be found in load.ipynb. The files for the actual smoke estimate can be found in estimate.ipynb. airquality.ipynb is for gathering the AQI information for Pullman and it generates a file called aqi_10_worst_avg_2002-2020.json which contains the sum of the 10 worst AQI days for particulate matter 10 for each year. Finally, visualization.ipynb contains the code for visualizing some of the key information about wildfire in a 1250 mile radius around pullman.
 
+Visualizations of acres burned by year, histogram of number of fires every 50 miles, AQI and smoke impact by year, and smoke impact predictions can be found in the figures folder.
+
 ## Data
 
 The data for the wildfires since the 1800's can be found at the USGS website [here](https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81). It is the 'GeoJSON Files.zip' file. We use the 'USGS_Wildland_Fire_Combined_Dataset.json' file for analysis. This file is parsed to evaluate if each fire is in the time period of interest and if it is in the region of interest. If it is, the id, year, acres, hectares and fire type are saved in fires.json.
