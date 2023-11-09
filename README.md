@@ -2,7 +2,7 @@
 
 ## Summary
 
-This repository is the code, data, and analysis for the analysis of wildfire data. From the acres burned and distance from pullman, this project seeks to estimate the smoke impact on the city of Pullman
+This repository is the code, data, and analysis for the analysis of wildfire data. This project is interested in the years of 1963 to present day and fires up to 1250 miles from the city of Pullman. From the acres burned and distance from pullman, this project seeks to estimate the smoke impact on the city of Pullman.
 
 ## AQI
 
@@ -16,7 +16,11 @@ The code for gathering the fire data for analysis and smoke impact estimates can
 
 ## Data
 
-The data for the wildfires since the 1800's can be found at the USGS website [here](https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81). It is the 'GeoJSON Files.zip' file. We use the 'USGS_Wildland_Fire_Combined_Dataset.json' file for analysis.
+The data for the wildfires since the 1800's can be found at the USGS website [here](https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81). It is the 'GeoJSON Files.zip' file. We use the 'USGS_Wildland_Fire_Combined_Dataset.json' file for analysis. This file is parsed to evaluate if each fire is in the time period of interest and if it is in the region of interest. If it is, the id, year, acres, hectares and fire type are saved in fires.json.
+
+The airquality.ipynb generates aqi_10_worst_avg_2002-2020.json which is the sum of the 10 worst days of air quality for particulate matter 10 over the period of time where Pullman was routinely capturing these values. I chose to only look at particulate matter 10 because this is what is generated primarily from wildfires and things like ozone don't really impact it. I found this information [here](https://ww2.arb.ca.gov/resources/inhalable-particulate-matter-and-health).
+
+The visualizations and estimates are calculated from fires.json and aqi_10_worst_avg_2002-2020.json.
 
 ## Considerations
 
@@ -41,23 +45,7 @@ conda env create -n <your-environment-name> -f environment.yml
 
 ## Usage
 
-The wikipedia.ipynb file utilizes the Wikimedia API to collect information for files the U.S. cities csv. The analysis.ipynb loads the data generated from the previous file and creates tables for analysis.
-
-## Research Implications
-
-I was surprised by a number of the results found in analysis.ipynb, specifically in the representation in both per capita articles and per capita quality articles for small states like Wyoming and Alaska. I also expected a bias towards the east and west coasts, but the highest per capita region was the midwest which surprised me.
-
-> **1. What biases did you expect to find in the data (before you started working with it), and why?**
-
-I expected a few things going into this project. First, I expected that the original 13 colonies and some of the older states on the east coast to have both more articles and more quality articles. This is because during my time in New Jersey I noticed that there are many small burrows which I thought could drive up total numbers, but I am also aware that the 13 colonies have the longest history which could lead to there being more to write about which in turn leads to a higher quality prediciton. Additionally, I expected that western states would have more high quality articles since there are many tech people on the west coast who I deemed more likely to write for wikipedia.
-
-> **2. What (potential) sources of bias did you discover in the course of your data processing and analysis?**
-
-I am not sure that the tables I created revealed anything revolutionary about bias, but when I did an empircal dive into the data, I did see some possible evidence of bias. I randomly looked through some articles and it was fairly common that cities I had never heard of and that did not have subjectively good wikipedia pages were given a good grade by the ML model. This leads me to believe that the model has a bias in rating articles higher. This would mean that states or regions with more articles would probably have more "quality" articles too due to false positives.
-
-> **3. How might a researcher supplement or transform this dataset to potentially correct for the limitations/biases you observed?**
-
-I think one way a researcher could supplement this data is by crawling the individual pages talk section and pulling the human annotations where possible. Additionally, one could add in metrics like word count or encode common sections to capture the actual contents of the articles.
+First, download the [data]() and run load.ipynb. Then run airquality.ipynb. Then, either visualization.ipynb or estimate.ipynb can be run.
 
 ## License
 
