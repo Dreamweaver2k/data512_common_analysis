@@ -1,9 +1,5 @@
 # data512_common_analysis
 
-## NOTE
-
-**The reflection can be found in 'Part 1 -- Common Analysis Reflection.pdf'. There was no way to submit two links so I submitted the github repo.**
-
 ## Summary
 
 This repository is the code, data, and analysis for the analysis of wildfire data. This project is interested in the years of 1963 to present day and fires up to 1250 miles from the city of Pullman. From the acres burned and distance from pullman, this project seeks to estimate the smoke impact on the city of Pullman.
@@ -21,6 +17,34 @@ The code for gathering the fire data for analysis and smoke impact estimates can
 Visualizations of acres burned by year, histogram of number of fires every 50 miles, AQI and smoke impact by year, and smoke impact predictions can be found in the figures folder.
 
 ## Data
+
+### Sources
+
+- US Environmental Protection Agency (EPA) Air Quality Service (AQS)
+  > EPA provided air quality data for validating smoke estimates from wildfires.
+  - data/aqi_10_worse_avg_2002-2020.json
+- Bureau of Labor Statistics (BLS)
+  > BLS provided data for ambulatory health care service workers and wages for the county of Whitman, WA which is where my target city of Pullman, WA resides.
+  - data/wages_timeseries.csv
+  - data/employee_timeseries.csv
+- Federal Reserve Economic Data (FRED)
+  > The FRED provided population data for the target city of Pullman, WA.
+  - data/population_timeseries.csv
+- United States Geological Survey (USGS)
+  > USGS provided files for fire data. These files contain data about each fire including year, acres burned, fire type, geo data, and more.
+  - data/fires.json
+  - data/smoke_impact.csv
+
+### Files
+
+- data/fires.json
+  > Description
+- data/smoke_impact.csv
+  > descr
+- data/wages_timeseries.csv
+
+- data/employee_timeseries.csv
+- data/population_timeseries.csv
 
 The data for the wildfires since the 1800's can be found at the USGS website [here](https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81). It is the 'GeoJSON Files.zip' file. We use the 'USGS_Wildland_Fire_Combined_Dataset.json' file for analysis. This file is parsed to evaluate if each fire is in the time period of interest and if it is in the region of interest. If it is, the id, year, acres, hectares and fire type are saved in fires.json.
 
