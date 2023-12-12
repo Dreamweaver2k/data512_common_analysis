@@ -124,7 +124,9 @@ Going through the wildfire data to find the fires near your target city can take
 
 When running airquality.ipynb, make sure to uncomment the code to get an access token for your email. This only needs done once.
 
-The healthcare analsis portion of this repository considers Whitman County, the county within which Pullman is located, rather than Pullman itself.
+Although the BLS API for wages should work for the given code, sometimes it does not. If you are having issues retrieving the wage data using the API, access it in the [dashboard](https://www.bls.gov/data/). Go to State and County Employment and Wages field in the Pay & Benefits section. Click on one screen. Query your data from their.
+
+The healthcare analysis portion of this repository considers Whitman County, the county within which Pullman is located, rather than Pullman itself.
 
 ## Installation
 
