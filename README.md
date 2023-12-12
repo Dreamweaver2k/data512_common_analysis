@@ -24,9 +24,9 @@ Visualizations of acres burned by year, histogram of number of fires every 50 mi
   > EPA provided air quality data for validating smoke estimates from wildfires.
   - data/aqi_10_worse_avg_2002-2020.json
 - Bureau of Labor Statistics (BLS)
-  > BLS provided data for ambulatory health care service workers and wages for the county of Whitman, WA which is where my target city of Pullman, WA resides.
+  > BLS provided data for ambulatory health care service wages for the county of Whitman, WA which is where my target city of Pullman, WA resides. Additionally, it provided CPI values for inflation adjustment.
   - data/wages_timeseries.csv
-  - data/employee_timeseries.csv
+  - data/cpi.csv
 - Federal Reserve Economic Data (FRED)
   > The FRED provided population data for the target city of Pullman, WA.
   - data/population_timeseries.csv
@@ -57,6 +57,14 @@ Visualizations of acres burned by year, histogram of number of fires every 50 mi
   > This file contains employment information for ambulatory health care service workers in Whitman County, WA from 1990-2023 for the months of the fire season. This information includes the following fields:
 
   - "Employees" - The number of employees in ambulatory health care service for Whitman county in thousands.
+  - "Month" - The month of interest.
+  - "Year" - The year of interest.
+
+- data/cpi.csv
+
+  > This file contains CPI information for the years of 2000-2023 during the months of the fire season. This information includes the following fields:
+
+  - "cpi" - The consumer price index for the given month and year.
   - "Month" - The month of interest.
   - "Year" - The year of interest.
 
